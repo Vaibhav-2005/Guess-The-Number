@@ -1,0 +1,46 @@
+import java.util.Random;
+import java.util.Scanner;
+
+class game {
+    public int takeUserInput(){
+        Scanner num = new Scanner(System.in);
+        return num.nextInt();
+    }
+    game(){
+        int i=0;
+        int compChoice=random();
+        while(i>=0)
+        {
+            System.out.println("Enter a Number");
+            int userNum=takeUserInput();
+            if(compChoice > userNum)
+             {
+                 System.out.println("Choose a greater number");
+             }
+            else if (compChoice < userNum)
+            {
+                System.out.println("Choose a smaller number");
+            }
+            else{
+                noOfGuesses(i);
+                break;
+            }
+            i++;
+        }
+    }
+    public void noOfGuesses(int j){
+        System.out.println("Congrats! You Guessed the number correctly.");
+        System.out.println("Your Score "+ j);
+    }
+    public int random() {
+        Random rnd = new Random();
+        return rnd.nextInt(0,100);
+    }
+}
+
+public class Guess_The_Number_Ghost {
+    public static void main(String[] args) {
+        game g = new game();
+        System.out.println("Ghost");
+    }
+}
